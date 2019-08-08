@@ -16,7 +16,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" type="text/css" href="../css/estilo.css">
         <title>Perfil</title>
         <style>
@@ -36,29 +36,29 @@
         </style>
     </head>
     <body>
-        <header>
-            <%
-                usuariovo vo = (usuariovo) session.getAttribute("usuario");
-                PublicarVO perfil = (PublicarVO) session.getAttribute("perfil");
-                ProductoDAO pdao = new ProductoDAO();
-                 CategoriaDao cd = new CategoriaDao();
-                List<PublicarVO> producto = pdao.listar(perfil.getId_usuario());
-                List<CategoriasVo> lista = cd.listar();
-            %>               
-             
+
+        <%
+            usuariovo vo = (usuariovo) session.getAttribute("usuario");
+            PublicarVO perfil = (PublicarVO) session.getAttribute("perfil");
+            ProductoDAO pdao = new ProductoDAO();
+            CategoriaDao cd = new CategoriaDao();
+            List<PublicarVO> producto = pdao.listar(perfil.getId_usuario());
+            List<CategoriasVo> lista = cd.listar();
+        %>               
+
         <jsp:include page="../Encabezado.jsp" ></jsp:include>
-        
-        </header>
-         
-        <div class="container">
-            <div class="row" style="border: 1px solid #E1E1E1;">
-                <div class="col-md-4">
-                    <img src="" width="250" height="250">                    
-                </div>
-                <div class="col-md-8">
-                    <br>
-                    <div class="col-md-5">
-                        <h4>Nombre : ${perfil.getUsuario().getNombres()}</h4>
+
+
+
+            <div class="container">
+                <div class="row" style="border: 1px solid #E1E1E1;">
+                    <div class="col-md-4">
+                        <img src="" width="250" height="250">                    
+                    </div>
+                    <div class="col-md-8">
+                        <br>
+                        <div class="col-md-5">
+                            <h4>Nombre : ${perfil.getUsuario().getNombres()}</h4>
                         <br>
                         <br>
                         <h4>Telefono : ${perfil.getUsuario().getTelefono()} </h4>
@@ -80,30 +80,29 @@
             <br>
             <c:forEach var="pd" items="<%=producto%>">
                 <div class="container">
-                   
-                        <div class="row" style="border: 1px solid #E1E1E1;" >
 
-                            <div class="col-md-3" >
-                                <img src="../consultarimagen?id=${pd.getId_publicar()}" width="170" height="170">
-                            </div>
-                            <div class="col-md-4" >
-                                <h3>${pd.getNombre()}</h3>
-                                <br>
-                                <p style="border: 1px solid #E1E1E1;">${pd.getDescripcion()}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <br>                      
-                                <a><input type="submit" class="form-control btn btn-primary" value="Agendar cita " ></a>
-                                <br>
-                                <br>                               
-                            </div>                   
-                        </div>                    
+                    <div class="row" style="border: 1px solid #E1E1E1;" >
+
+                        <div class="col-md-3" >
+                            <img src="../consultarimagen?id=${pd.getId_publicar()}" width="170" height="170">
+                        </div>
+                        <div class="col-md-4" >
+                            <h3>${pd.getNombre()}</h3>
+                            <br>
+                            <p style="border: 1px solid #E1E1E1;">${pd.getDescripcion()}</p>
+                        </div>
+                        <div class="col-md-3">
+                            <br>                      
+                            <a><input type="submit" class="form-control btn btn-primary" value="Agendar cita " ></a>
+                            <br>
+                            <br>                               
+                        </div>                   
+                    </div>                    
                 </div>
             </div>
         </c:forEach>
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.js" type="text/javascript"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+        <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
     </body>
 </html>
 

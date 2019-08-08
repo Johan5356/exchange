@@ -28,28 +28,23 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
         <link rel="stylesheet" type="text/css" href="../css/estilo.css">
         <link rel="stylesheet" href="../css/estilos.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script type="text/javascript" src="../js/validacion.js"></script>   
 
     </head>  
     <body>
-        <header>
-            <%
 
-                departamentoDao dao = new departamentoDao();
-                CiudadDao cd = new CiudadDao();
-                CategoriaDao ca = new CategoriaDao();
-                List<CiudadVO> ciudades = cd.ciudades();
-                List<DepartamentosVo> departamentos = dao.departamentos();
-                List<CategoriasVo> lista = ca.listar();
+        <%
 
-            %>
-            <div class="contenedor">
-                <div id="marca">
-                    <h1><span class="resaltado">Exchange</span> Plataforma de Trueques</h1>			
-                </div>
-            </div>
-        </header> 
+            departamentoDao dao = new departamentoDao();
+            CiudadDao cd = new CiudadDao();
+            CategoriaDao ca = new CategoriaDao();
+            List<CiudadVO> ciudades = cd.ciudades();
+            List<DepartamentosVo> departamentos = dao.departamentos();
+            List<CategoriasVo> lista = ca.listar();
+
+        %>
+
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -57,7 +52,7 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="inicio.jsp">Inicio</a></li>
-                   
+
                     <li><a href="#">Ayuda</a></li>
                 </ul>
                 <ul class="nav navbar-nav ">
@@ -142,8 +137,7 @@
             <p>¿Ya tienes una cuenta?<a class="link" href="../html/loginvista.html">Iniciar Sesion</a></p>
         </div>
     </form>
+    <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
     <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="../js/jquery.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

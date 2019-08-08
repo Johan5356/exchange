@@ -20,7 +20,7 @@
         <title>JSP Page</title>
         <link href="../css/estiloprincipal.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" type="text/css" href="../css/estilo.css">
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
          <style>
             form{
 
@@ -49,9 +49,9 @@
             List<PublicarVO> producto = pdao.listarcategoria(idcategoria);
 
         %>
-        <header>
+
           <jsp:include page="../Encabezado.jsp"></jsp:include>
-        </header>
+       
        
         <table border="0" align="center" width="1000">
             <%                int salto = 0;
@@ -76,8 +76,7 @@
                     %>
                 </c:forEach>
         </table>
-                    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.js" type="text/javascript"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+            <script src="../js/bootstrap.min.js" type="text/javascript"></script>
     </body>
 </html>

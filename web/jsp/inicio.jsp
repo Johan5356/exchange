@@ -11,7 +11,7 @@
         <title>Exchange</title>
         <meta charset="utf-8">
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <meta name = "viewport" content="width=device-width">
         <meta name = "description" content="Exchange mas que una familia">
         <meta name = "keywords" content="diseño web, desarrollo web, seo, posicionamiento web">
@@ -34,8 +34,8 @@
         </style>
     </head>
     <body>
-        <header>
-             <%
+        
+            <%
                 usuariovo vo = (usuariovo) session.getAttribute("usuario");
                 CategoriaDao cd = new CategoriaDao();
                 ProductoDAO pdao = new ProductoDAO();
@@ -44,41 +44,40 @@
 
             %>
             <jsp:include page="../Encabezado.jsp"></jsp:include>
-        </header>
-        <br>
-    <center>
-        <img src="../img/logolargo.png">
-    </center>
+            </header>
+            <br>
+        <center>
+            <img src="../img/logolargo.png">
+        </center>
 
-    <section id="cabecera">
-        <div class="contenedor">
-            <h1>Profesionales Expertos en Intercambios Online</h1>
-            <p>¿Deseas intercambiar algun objeto que no necesitas por otro que realmente necesitas</p>
-        </div>
-    </section>
+        <section id="cabecera">
+            <div class="contenedor">
+                <h1>Profesionales Expertos en Intercambios Online</h1>
+                <p>¿Deseas intercambiar algun objeto que no necesitas por otro que realmente necesitas</p>
+            </div>
+        </section>
 
 
-    <section id="boletin">
-        <div class="contenedor">
-            <h1>Encuentra rapido tus objetos...</h1>
-            <form>
-                <input type="text" name="texto" placeholder="Buscar objeto...">
-                <button type="submit" class="boton1">Buscar</button>
-            </form>
-        </div>
- <table border="0" align="center" width="1000">
-            <%
-                int salto = 0;
+        <section id="boletin">
+            <div class="contenedor">
+                <h1>Encuentra rapido tus objetos...</h1>
+                <form>
+                    <input type="text" name="texto" placeholder="Buscar objeto...">
+                    <button type="submit" class="boton1">Buscar</button>
+                </form>
+            </div>
+            <table border="0" align="center" width="1000">
+            <%                int salto = 0;
             %>
             <c:forEach var="pd" items="<%=producto%>">
-               <th> <a href="../detalles?idproducto=${pd.getId_publicar()}"><img src="../consultarimagen?id=${pd.getId_publicar()}" height="200" width="200"><p>
-                    <p>
-                        Nombre : ${pd.getNombre()}<br>
-                        Valor : ${pd.getPrecioestimado()}<br>
-                        
-                    </p>
+                <th> <a href="../detalles?idproducto=${pd.getId_publicar()}"><img src="../consultarimagen?id=${pd.getId_publicar()}" height="200" width="200"><p>
+                        <p>
+                            Nombre : ${pd.getNombre()}<br>
+                            Valor : ${pd.getPrecioestimado()}<br>
+
+                        </p>
                     </a>
-                   </th>
+                </th>
                 <%
                     salto++;
                     if (salto == 4) {
@@ -97,7 +96,6 @@
 
         </footer>
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.js" type="text/javascript"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
     </body>
 </html>

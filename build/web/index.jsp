@@ -10,7 +10,7 @@
     <head>
         <title>Exchange</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <meta name = "viewport" content="width=device-width">
         <meta name = "description" content="Exchange mas que una familia">
         <meta name = "keywords" content="diseño web, desarrollo web, seo, posicionamiento web">
@@ -18,7 +18,7 @@
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
     </head>
     <body>
-        <header>
+       
             <%
                 ProductoDAO pdao = new ProductoDAO();
                 CategoriaDao cd = new CategoriaDao();
@@ -26,12 +26,7 @@
                 List<CategoriasVo> lista = cd.listar();
                 List<PublicarVO> producto = pdao.verproducto();
             %>
-            <div class="contenedor">
-                <div id="marca">
-                    <h1><span class="resaltado">Exchange</span> Plataforma de Trueques</h1>			
-                </div>
-            </div>
-        </header>  
+           
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -109,8 +104,7 @@
             </center>
 
         </footer>
-        <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.js" type="text/javascript"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <script src="js/bootstrap.min.js" type="text/javascript"></script>
+            <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
     </body>
 </html>

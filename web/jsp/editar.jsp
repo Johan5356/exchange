@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Editar Perfil</title>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
@@ -40,9 +40,9 @@
             List<CiudadVO> ciudades = ciudadDao.ciudades();
 
         %>
-        <header>
+        
             <jsp:include page="../Encabezado.jsp"></jsp:include>
-        </header>
+       
 
         <div class="row container">
             <div class="col-md-2"></div>
@@ -103,9 +103,7 @@
     </div>
 
 </div>
-
 <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../js/jquery.js" type="text/javascript"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
 </body>
 </html>

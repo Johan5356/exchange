@@ -18,7 +18,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <meta name = "viewport" content="width=device-width">
         <meta name = "description" content="Exchange mas que una familia">
         <meta name = "keywords" content="diseÃ±o web, desarrollo web, seo, posicionamiento web">
@@ -42,59 +42,55 @@
     </head>
     <body>
         <%
-                usuariovo vo = (usuariovo) session.getAttribute("usuario");
-                CategoriaDao cd = new CategoriaDao();
-                ProductoDAO pdao = new ProductoDAO();
-                List<CategoriasVo> lista = cd.listar();
-                List<PublicarVO> producto = pdao.verproducto();
+            usuariovo vo = (usuariovo) session.getAttribute("usuario");
+            CategoriaDao cd = new CategoriaDao();
+            ProductoDAO pdao = new ProductoDAO();
+            List<CategoriasVo> lista = cd.listar();
+            List<PublicarVO> producto = pdao.verproducto();
 
-            %>
-            <div class="contenedor">
-                <div id="marca">
-                    <h1><span class="resaltado">Exchange</span> Plataforma de Trueques</h1>			
-                </div>
-
+        %>
+       
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Exchange</a>
             </div>
-        </header>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Exchange</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="inicio.jsp">Inicio</a></li>
-                    <li><a href="PublicarProducto.jsp">Publicar</a></li>
-                    <li><a href="#">Ayuda</a></li>
-                </ul>
-                <ul class="nav navbar-nav ">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categorias
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <c:forEach var="ca" items="<%=lista%>">
-                                 <li><a href="Categoria.jsp?idcategoria=${ca.getIdCategoria()}">${ca.getDescripcion()}</a></li>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="inicio.jsp">Inicio</a></li>
+                <li><a href="PublicarProducto.jsp">Publicar</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+            <ul class="nav navbar-nav ">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categorias
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <c:forEach var="ca" items="<%=lista%>">
+                            <li><a href="Categoria.jsp?idcategoria=${ca.getIdCategoria()}">${ca.getDescripcion()}</a></li>
                             </c:forEach>
-                               
-                            
-                        </ul>
-                    </li>
 
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">${usuario.getNombres()}
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">${usuario.getCorreo()}</a></li>
-                            <li><a href="Perfil.jsp">Perfil</a></li>
-                            <li><a href="editar.jsp">Editar Perfil</a></li>
-                            <li><a href="Editarclave.jsp">Cambio de Contraseña</a></li>
-                            <li><a href="../cerrar">Salir</a></li>
-                        </ul>
-                    </li>
 
-                </ul>
-            </div>
-        </nav>
-    </body>
+                    </ul>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">${usuario.getNombres()}
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">${usuario.getCorreo()}</a></li>
+                        <li><a href="Perfil.jsp">Perfil</a></li>
+                        <li><a href="editar.jsp">Editar Perfil</a></li>
+                        <li><a href="Editarclave.jsp">Cambio de Contraseña</a></li>
+                        <li><a href="../cerrar">Salir</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+</body>
 </html>

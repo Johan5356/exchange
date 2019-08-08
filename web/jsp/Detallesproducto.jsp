@@ -19,7 +19,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Detalles pedidos</title>
         <link rel="stylesheet" type="text/css" href="../css/estilo.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <style>
             body {
                 font:15px Arial, Helvetica, sans-serif;
@@ -33,35 +33,35 @@
         <%
 
             PublicarVO pvo = (PublicarVO) session.getAttribute("producto");
-            usuariovo vo = (usuariovo) session.getAttribute("usuario");            
+            usuariovo vo = (usuariovo) session.getAttribute("usuario");
             CategoriaDao cd = new CategoriaDao();
             List<CategoriasVo> lista = cd.listar();
 
 
         %>
-        <header>
-            <jsp:include page="../Encabezado.jsp"></jsp:include>
-        </header>
         
-        <div class="container">
-            <div class="row">
+            <jsp:include page="../Encabezado.jsp"></jsp:include>
+            
 
-                <h2 align="center">Detalles</h2>
-                <form>
-                    <div class="col-md-6" >
-                        <div class="col-md-3"></div>
-                        <div class="col-md-9">
-                            <img src="../consultarimagen?id=<%=pvo.getId_publicar()%>" width="300" height="300">
+            <div class="container">
+                <div class="row">
+
+                    <h2 align="center">Detalles</h2>
+                    <form>
+                        <div class="col-md-6" >
+                            <div class="col-md-3"></div>
+                            <div class="col-md-9">
+                                <img src="../consultarimagen?id=<%=pvo.getId_publicar()%>" width="300" height="300">
                             <br>
-                           <a href="../perfil?idusuario=<%=pvo.getId_usuario()%>"> <div class="col-md-6">
-                                <img src="" class="img-circle" width="80" height="80">
-                            </div>
+                            <a href="../perfil?idusuario=<%=pvo.getId_usuario()%>"> <div class="col-md-6">
+                                    <img src="" class="img-circle" width="80" height="80">
+                                </div>
 
-                            <div class="col-md-6">     
-                                <h4><%=pvo.getUsuario().getNombres()%></h4>                                
-                                <h4><%=pvo.getUsuario().getTelefono()%></h4>  
-                                
-                               </div></a>
+                                <div class="col-md-6">     
+                                    <h4><%=pvo.getUsuario().getNombres()%></h4>                                
+                                    <h4><%=pvo.getUsuario().getTelefono()%></h4>  
+
+                                </div></a>
 
                         </div>
                     </div>
@@ -105,12 +105,10 @@
                 </form>       	
             </div>
         </div>    
+        <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.min.js" type="text/javascript"></script>
 
 
-
-        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../js/jquery.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </body>
 
 </html>

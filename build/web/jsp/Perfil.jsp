@@ -16,7 +16,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" type="text/css" href="../css/estilo.css">
         <title>Perfil</title>
         <style>
@@ -36,7 +36,7 @@
         </style>
     </head>
     <body>
-        <header>
+      
             <%
                 usuariovo vo = (usuariovo) session.getAttribute("usuario");
                 ProductoDAO pdao = new ProductoDAO();
@@ -45,17 +45,17 @@
                 List<CategoriasVo> lista = cd.listar();
             %>               
             <jsp:include page="../Encabezado.jsp"></jsp:include>
-        </header>
-        
-        <div class="container">
-            <div class="row" style="border: 1px solid #E1E1E1;">
-                <div class="col-md-4">
-                    <img src="" width="250" height="250">                    
-                </div>
-                <div class="col-md-8">
-                    <br>
-                    <div class="col-md-5">
-                        <h4>Nombre : ${usuario.getNombres()}</h4>
+          
+
+            <div class="container">
+                <div class="row" style="border: 1px solid #E1E1E1;">
+                    <div class="col-md-4">
+                        <img src="" width="250" height="250">                    
+                    </div>
+                    <div class="col-md-8">
+                        <br>
+                        <div class="col-md-5">
+                            <h4>Nombre : ${usuario.getNombres()}</h4>
                         <br>
                         <br>
                         <h4>Telefono : ${usuario.getTelefono()} </h4>
@@ -109,8 +109,6 @@
                 </div>
             </div>
         </c:forEach>
+        <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.js" type="text/javascript"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
-    </body>
 </html>
